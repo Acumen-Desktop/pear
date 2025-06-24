@@ -1,0 +1,25 @@
+{
+  "name": "fork_pear",
+  "version": "0.1.0",
+  "description": "Minimal Pear runtime fork for custom Electron main process and preload control.",
+  "main": "electron-main.cjs",
+  "pear": {
+    "name": "fork_pear",
+    "type": "desktop",
+    "gui": {
+      "backgroundColor": "#222",
+      "width": 720,
+      "height": 540
+    }
+  },
+  "type": "module",
+  "license": "Apache-2.0",
+  "dependencies": {},
+  "devDependencies": {
+    "pear-interface": "^1.0.0"
+  },
+  "scripts": {
+    "fap": "node pear_fap.cjs",
+    "dev": "pear run -d ."
+  }
+}

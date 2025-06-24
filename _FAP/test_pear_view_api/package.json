@@ -1,0 +1,29 @@
+{
+  "name": "test_pear_view_api",
+  "main": "index.html",
+  "pear": {
+    "name": "test_pear_view_api",
+    "type": "desktop",
+    "gui": {
+      "backgroundColor": "#1F2430",
+      "x": 2048,
+      "y": 0,
+      "height": 1080,
+      "width": 800
+    },
+    "links": {
+      "test-view.html": "./test-view.html",
+      "test-window.html": "./test-window.html"
+    }
+  },
+  "type": "module",
+  "license": "Apache-2.0",
+  "scripts": {
+    "dev": "pear run -d .",
+    "test": "brittle test/*.test.js"
+  },
+  "devDependencies": {
+    "brittle": "^3.0.0",
+    "pear-interface": "^1.0.0"
+  }
+}

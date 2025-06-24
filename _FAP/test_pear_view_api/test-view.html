@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bottom Sibling View</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 20px;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+
+      .container {
+        max-width: 600px;
+        padding: 40px;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border-radius: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      h1 {
+        font-size: 2.5em;
+        margin-bottom: 20px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      }
+
+      p {
+        font-size: 1.2em;
+        line-height: 1.6;
+        margin-bottom: 30px;
+        opacity: 0.9;
+      }
+
+      .badge {
+        display: inline-block;
+        padding: 10px 20px;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 25px;
+        font-weight: bold;
+        margin: 10px;
+      }
+
+      .success {
+        color: #48bb78;
+        font-weight: bold;
+        font-size: 1.3em;
+      }
+
+      .info {
+        background: rgba(0, 0, 0, 0.2);
+        padding: 15px;
+        border-radius: 10px;
+        margin-top: 20px;
+        font-family: "Courier New", monospace;
+        font-size: 0.9em;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>🎉 Bottom Sibling View</h1>
+      <p class="success">✅ SUCCESS! This is a separate BrowserView!</p>
+
+      <p>
+        This view is positioned in the <strong>bottom half</strong> of the same
+        BrowserWindow that hosts the main view above.
+      </p>
+
+      <div class="badge">🪟 Same Window</div>
+      <div class="badge">📱 Different View</div>
+      <div class="badge">🎯 Split Screen</div>
+
+      <div class="info">
+        <strong>Architecture:</strong><br />
+        • BrowserWindow (Host Container)<br />
+        • ├── decal.html (System UI)<br />
+        • ├── Main View (Top Half)<br />
+        • └── This View (Bottom Half)
+      </div>
+
+      <p>
+        <em
+          >You've successfully achieved true multi-view within a single Pear
+          window!</em
+        >
+      </p>
+    </div>
+
+    <script>
+      // Log this view's information
+      console.log("🎯 Bottom Sibling View loaded!");
+      console.log("Window ID:", Pear.Window?.self?.id);
+      console.log(
+        "This view is running in the bottom half of the BrowserWindow"
+      );
+
+      // Add some interactivity
+      document.addEventListener("click", () => {
+        document.body.style.background = `linear-gradient(135deg, 
+                hsl(${Math.random() * 360}, 70%, 60%) 0%, 
+                hsl(${Math.random() * 360}, 70%, 40%) 100%)`;
+      });
+    </script>
+  </body>
+</html>

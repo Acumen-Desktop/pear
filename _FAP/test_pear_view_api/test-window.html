@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        background: linear-gradient(135deg, #1f2430 0%, #2d3748 100%);
+        color: white;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+        text-align: center;
+      }
+
+      .container {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 40px;
+        border-radius: 16px;
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      h1 {
+        margin: 0 0 15px 0;
+        font-size: 2.5em;
+        color: #4fd1c7;
+      }
+
+      p {
+        margin: 0 0 20px 0;
+        opacity: 0.9;
+        font-size: 1.1em;
+      }
+
+      .info {
+        margin-top: 25px;
+        padding: 15px;
+        background: rgba(79, 209, 199, 0.1);
+        border-radius: 8px;
+        font-size: 14px;
+        text-align: left;
+      }
+
+      .pear-ctrl-area {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 42px;
+        background: rgba(55, 60, 72, 0.6);
+        backdrop-filter: blur(64px);
+        -webkit-app-region: drag;
+        display: flex;
+        align-items: center;
+        padding: 0 12px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="pear-ctrl-area">
+      <pear-ctrl></pear-ctrl>
+    </div>
+
+    <div class="container">
+      <h1>🪟 Test Window</h1>
+      <p>This is a new Pear BrowserWindow!</p>
+      <div class="info">
+        <strong>Type:</strong> BrowserWindow<br />
+        <strong>Purpose:</strong> Testing multi-window API<br />
+        <strong>URL:</strong> <span id="current-url"></span><br />
+        <strong>Time:</strong> <span id="current-time"></span>
+      </div>
+    </div>
+
+    <script>
+      document.getElementById("current-url").textContent = window.location.href;
+
+      function updateTime() {
+        document.getElementById("current-time").textContent =
+          new Date().toLocaleTimeString();
+      }
+
+      updateTime();
+      setInterval(updateTime, 1000);
+
+      console.log("Test window loaded successfully!");
+    </script>
+  </body>
+</html>
